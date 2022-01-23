@@ -13,7 +13,7 @@
                     @method('POST')
                     <label class="register-label" for="is_parent">Is category parent:</label>
                     <label class="register-label" for="is_parent">0 = No / 1 = Yes</label>
-                    <input class="register-input-text" type="text" name="is_parent" id="is_parent" required>
+                    <input class="register-input-text" type="text" name="is_parent" id="is_parent" value="0" required>
 
                     <label class="register-label" for="parent_id">Parent id:</label>
                     <input class="register-input-text" type="text" name="parent_id" id="parent_id">
