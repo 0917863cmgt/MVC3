@@ -5,7 +5,7 @@
             <div class="row gx-2">
                <div class="col-12">
                    <h1>Recipes</h1>
-                   <a href="/create" class="n-t-d blue" style="float: right">Create User</a>
+                   <a href="/create" class="n-t-d blue" style="float: right">Create Recipe</a>
                    <x-recipes-header></x-recipes-header>
                    <div class="row">
                        @foreach($recipes as $recipe)
