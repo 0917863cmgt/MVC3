@@ -22,7 +22,7 @@ class LikesValidation
         if(Auth::check()){
             $id = Auth::id();
             $count = Like::whereNotNull('recipe_id')->whereNull('comment_id')->where('user_id', '=', $id)->count();
-            if( $count < 5){
+            if( auth()->user()->role == 3 && $count < 5 ){
                 return back()->with('fail', 'U moet ' . (5-$count) . ' extra recepten liken om een recept te plaatsen!');
             }
         } else {

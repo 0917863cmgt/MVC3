@@ -22,7 +22,7 @@ class CommentValidation
         if(Auth::check()){
             $id = Auth::id();
             $count = Like::whereNotNull('recipe_id')->whereNotNull('comment_id')->where('user_id', '=', $id)->count();
-            if( $count < 5){
+            if( auth()->user()->role == 3 && $count < 5){
                 return back()->with('fail', 'U moet ' . (5-$count) . ' extra comments liken om een comment te plaatsen!');
             }
         } else {
