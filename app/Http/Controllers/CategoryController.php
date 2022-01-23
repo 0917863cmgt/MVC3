@@ -46,10 +46,16 @@ class CategoryController extends Controller
     {
         $attributes = request()->validate([
             'is_parent' => 'required|integer|min:0|max:1',
-            'parent_id' => 'integer|min:1',
+            'parent_id' => 'integer',
             'name' => [Rule::unique('categories', 'name'), 'string', 'min:4' ],
             'slug' => [Rule::unique('categories', 'slug'), 'string', 'min:4' ]
         ]);
+
+        if(isset($attributes['parent_id']) & strlen($attributes['parent_id']) > 8){
+            $attributes['parent_id'] = bcrypt($attributes['parent_id']);
+        } else {
+            unset($attributes['parent_id']);
+        }
 
         Category::create($attributes);
 
