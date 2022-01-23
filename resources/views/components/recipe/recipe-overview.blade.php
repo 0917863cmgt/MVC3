@@ -19,7 +19,6 @@
         </a>
     </div>
 </div>
-<h3 style="margin-bottom: 10px">{{$recipe->title}}</h3>
 <p>Amount of people: {{$recipe->amount_people}}</p>
 <h3>Description:</h3>
 <p>{{$recipe->description}}</p>

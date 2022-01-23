@@ -7,7 +7,7 @@
         </a>
         <div class="row gx-2 justify-content-center">
             <div class="col-6">
-                <h1>Recipe overview</h1>
+                <h1 style="margin-bottom: 10px">{{$recipe->title}}</h1>
                 <div class="row">
                     <x-recipe.recipe-overview
                         :recipe="$recipe"
