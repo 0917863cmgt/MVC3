@@ -6,7 +6,5 @@
         <p>Amount of people: {{$recipe->amount_people}}</p>
         <p>Description:</p>
         <p>{{Illuminate\Support\Str::limit($recipe->description,200,"...")}}</p>
-        <p>Ingredients:</p>
-        <p>{{$recipe->ingredients}}</p>
     </a>
 </div>
