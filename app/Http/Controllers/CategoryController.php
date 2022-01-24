@@ -51,8 +51,12 @@ class CategoryController extends Controller
             'slug' => [Rule::unique('categories', 'slug'), 'string', 'min:2' ]
         ]);
 
-        if(!isset($attributes['parent_id']) && strlen($attributes['parent_id']) < 1){
-            unset($attributes['parent_id']);
+        if($attributes['parent_id'] == null && $attributes['is_parent'] == 1){
+            $attributes['parent_id'] = null;
+        }
+
+        if($attributes['is_parent'] == null){
+            $attributes['is_parent'] = 0;
         }
 
         Category::create($attributes);
