@@ -51,9 +51,7 @@ class CategoryController extends Controller
             'slug' => [Rule::unique('categories', 'slug'), 'string', 'min:2' ]
         ]);
 
-        if(isset($attributes['parent_id']) & strlen($attributes['parent_id']) > 8){
-            $attributes['parent_id'] = bcrypt($attributes['parent_id']);
-        } else {
+        if(!isset($attributes['parent_id']) && strlen($attributes['parent_id']) < 1){
             unset($attributes['parent_id']);
         }
 
