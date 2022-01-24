@@ -21,7 +21,6 @@
             <a id="homepage-link" href="/"><li>Recipes from Home</li></a>
             @auth
                 @if(auth()->user()->role == 1)
-                    <a href="/admin"><li>Admin</li></a>
                     <a href="/recipes"><li>Recipes</li></a>
                     <a href="/categories"><li>Categories</li></a>
                     <a href="/admin/users"><li>Users</li></a>
